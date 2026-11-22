@@ -22,7 +22,7 @@ SoulAlcove is a minimal mood tracker and emotional journal for Android. No accou
 
 ## Tech Stack
 
-- **Python** + **Flet** / **KivyMD** (Android GUI)
+- **Python** + **KivyMD** (Android GUI)
 - **SQLite** for local storage
 - No backend, no external servers
 
@@ -42,4 +42,4 @@ Found a bug or have an idea? Open an issue on GitHub. Early user feedback shapes
 
 ## License
 
-MIT (https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
+MIT [https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE]([https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
