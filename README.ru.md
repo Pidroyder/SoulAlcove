@@ -22,7 +22,7 @@ SoulAlcove — это минималистичный трекер настрое
 
 ## Технологии
 
-- **Python** + **Flet** / **KivyMD** (Android GUI)
+- **Python** + **KivyMD** (Android GUI)
 - **SQLite** для локального хранения
 - Без бэкенда и внешних серверов
 
@@ -42,4 +42,4 @@ SoulAlcove — это минималистичный трекер настрое
 
 ## Лицензия
 
-MIT (https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
+MIT [https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE]([https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
