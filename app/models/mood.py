@@ -5,7 +5,6 @@ from datetime import date
 @dataclass(frozen=True)
 class MoodLevel:
     '''Уровень настроения.'''
-
     score: int
     emoji: str
     color_hex: str
@@ -15,7 +14,6 @@ class MoodLevel:
 @dataclass
 class Mood:
     '''Запись настроения за дату.'''
-
     entry_date: str
     score: int
     note: str = ''
