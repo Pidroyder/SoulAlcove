@@ -218,7 +218,19 @@ class MoodChart(Widget):
                 application.strings['no_data']
                 if application else 'Нет данных'
             )
-            self.add_widget(MDLabel(text=message, halign='center'))
+            message_width = max(self.width - dp(48), dp(120))
+            self.add_widget(
+                MDLabel(
+                    text=message,
+                    halign='center',
+                    valign='middle',
+                    font_size='14sp',
+                    text_size=(message_width, None),
+                    size_hint=(None, None),
+                    size=(message_width, dp(48)),
+                    pos=(dp(24), self.height / 2 - dp(24)),
+                )
+            )
             return
         left = dp(56)
         right = dp(12)
@@ -310,6 +322,7 @@ class SoulAlcoveApp(MDApp):
 
     def build(self):
         '''Создаёт интерфейс приложения.'''
+        Window.softinput_mode = 'below_target'
         self.theme_cls.dynamic_scheme_name = 'VIBRANT'
         self.theme_cls.primary_palette = 'DodgerBlue'
         self.service = MoodService(MoodRepository(self.get_database_path()))
@@ -355,6 +368,22 @@ class SoulAlcoveApp(MDApp):
                     circle_color=get_color_from_hex(level.color_hex),
                 )
             )
+        self.layout_mood_circles()
+        container.bind(width=self.layout_mood_circles)
+
+    def layout_mood_circles(self, instance=None, value=None):
+        '''Подгоняет размер кругов под ширину экрана.'''
+        container = self.root.ids.mood_circles
+        count = len(container.children)
+        if not count:
+            return
+        spacing = container.spacing
+        if isinstance(spacing, (list, tuple)):
+            spacing = spacing[0]
+        diameter = (container.width - spacing * (count - 1)) / count
+        diameter = min(dp(68), max(dp(44), diameter))
+        for circle in container.children:
+            circle.size = (diameter, diameter)
 
     def apply_language(self, language):
         '''Применяет язык интерфейса.'''
