@@ -8,13 +8,11 @@ from models.mood import (
     validate_score,
 )
 
-
 PERIOD_DAYS = {'week': 7, 'month': 30}
 
 
 class MoodService:
     '''Сервис записей настроения.'''
-
     def __init__(self, repository):
         self.repository = repository
 
