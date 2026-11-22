@@ -42,4 +42,4 @@ Found a bug or have an idea? Open an issue on GitHub. Early user feedback shapes
 
 ## License
 
-MIT (or specify your license)
+MIT (https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
