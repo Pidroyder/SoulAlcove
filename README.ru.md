@@ -42,4 +42,4 @@ SoulAlcove — это минималистичный трекер настрое
 
 ## Лицензия
 
-MIT (https://example.com)
+MIT (https://github.com/Pidroyder/SoulAlcove/blob/main/LICENSE)
