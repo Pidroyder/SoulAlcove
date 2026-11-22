@@ -61,7 +61,6 @@ LabelBase.register(
     fn_regular=os.path.join(FONT_DIRECTORY, 'NotoEmoji.ttf'),
 )
 
-
 MONTHS_EN = (
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
@@ -137,7 +136,6 @@ def detect_language():
 
 class MoodCircle(ButtonBehavior, MDBoxLayout):
     '''Круг с эмодзи для выбора настроения.'''
-
     score = NumericProperty()
     emoji = StringProperty()
     circle_color = ColorProperty((1, 1, 1, 1))
@@ -146,7 +144,6 @@ class MoodCircle(ButtonBehavior, MDBoxLayout):
 
 class MoodEntryItem(ButtonBehavior, MDBoxLayout):
     '''Запись настроения в списке истории.'''
-
     entry_key = StringProperty()
     entry_date = StringProperty()
     emoji = StringProperty()
@@ -155,7 +152,6 @@ class MoodEntryItem(ButtonBehavior, MDBoxLayout):
 
 class NavigationItem(MDNavigationItem):
     '''Пункт нижней навигации.'''
-
     icon_name = StringProperty()
     text_key = StringProperty()
     screen_name = StringProperty()
@@ -163,7 +159,6 @@ class NavigationItem(MDNavigationItem):
 
 class MoodChart(Widget):
     '''График настроения, нарисованный на canvas.'''
-
     values = ListProperty([])
     labels = ListProperty([])
 
@@ -304,7 +299,6 @@ class MoodChart(Widget):
 
 class SoulAlcoveApp(MDApp):
     '''Приложение трекера настроения.'''
-
     kv_file = os.path.join(os.path.dirname(__file__), 'soulalcove.kv')
 
     language = StringProperty('ru')
