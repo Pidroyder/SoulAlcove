@@ -7,7 +7,6 @@ from models.mood import Mood
 
 class MoodRepository:
     '''Хранилище записей настроения.'''
-
     def __init__(self, database_path):
         self.database_path = str(database_path)
 
