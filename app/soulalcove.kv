@@ -33,9 +33,9 @@
 <MoodEntryItem>:
     orientation: 'horizontal'
     size_hint_y: None
-    height: dp(72)
+    height: dp(60)
     spacing: dp(14)
-    padding: dp(16), dp(10)
+    padding: dp(16), dp(6)
     radius: [dp(16)]
     theme_bg_color: 'Custom'
     md_bg_color: app.theme_cls.surfaceContainerColor
@@ -225,19 +225,28 @@ MDBoxLayout:
                         MDSegmentButtonLabel:
                             text: app.strings['all_time']
 
-                MoodChart:
-                    id: mood_chart
-                    size_hint: 1, 0.9
-
                 MDScrollView:
-                    size_hint_y: 0.1
+                    id: history_scroll
+                    size_hint_y: 1
 
-                    MDGridLayout:
-                        id: entries_list
-                        cols: 1
+                    MDBoxLayout:
+                        orientation: 'vertical'
                         size_hint_y: None
                         height: self.minimum_height
-                        spacing: dp(8)
+                        spacing: dp(6)
+
+                        MoodChart:
+                            id: mood_chart
+                            size_hint_x: 1
+                            size_hint_y: None
+                            height: dp(348)
+
+                        MDGridLayout:
+                            id: entries_list
+                            cols: 1
+                            size_hint_y: None
+                            height: self.minimum_height
+                            spacing: dp(6)
 
         MDScreen:
             name: 'settings'

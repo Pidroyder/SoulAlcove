@@ -234,8 +234,8 @@ class MoodChart(Widget):
             return
         left = dp(56)
         right = dp(12)
-        bottom = dp(44)
-        top = dp(12)
+        bottom = dp(36)
+        top = dp(8)
         plot_width = max(self.width - left - right, dp(1))
         plot_height = max(self.height - bottom - top, dp(1))
         self.draw_lines(left, bottom, plot_width, plot_height)
@@ -469,7 +469,7 @@ class SoulAlcoveApp(MDApp):
         entries = self.service.get_entries_for_period(self.selected_period)
         container = self.root.ids.entries_list
         container.clear_widgets()
-        for entry in reversed(entries):
+        for entry in entries:
             container.add_widget(
                 MoodEntryItem(
                     entry_key=entry.entry_date,
@@ -481,8 +481,8 @@ class SoulAlcoveApp(MDApp):
         Clock.schedule_once(self.reset_history_scroll, 0.1)
 
     def reset_history_scroll(self, interval):
-        '''Прокручивает список записей к последней записи.'''
-        self.root.ids.entries_list.parent.scroll_y = 0.5
+        '''Прокручивает историю к середине содержимого.'''
+        self.root.ids.history_scroll.scroll_y = 0.5
 
     def select_mood(self, score):
         '''Сохраняет настроение одним касанием.'''
